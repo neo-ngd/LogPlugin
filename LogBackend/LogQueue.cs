@@ -2,7 +2,7 @@
 
 namespace Neo.Plugins
 {
-	internal class LogQueue
+    internal class LogQueue
     {
         internal ConcurrentQueue<string> que;
         internal int length { get; }
@@ -17,14 +17,14 @@ namespace Neo.Plugins
             this.length = 512;
         }
 
-		public void EnQueue(string log)
-		{
+        public void EnQueue(string log)
+        {
             while (this.length <= this.que.Count)
-			{
-				this.que.TryDequeue(out string str);
-			}
-			this.que.Enqueue(log);
-		}
+            {
+                this.que.TryDequeue(out string str);
+            }
+            this.que.Enqueue(log);
+        }
         public bool DeQueue(out string log)
         {
             return this.que.TryDequeue(out log);
