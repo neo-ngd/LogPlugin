@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace Neo.Plugins
 {
-	internal class Backend
+    internal class Backend
     {
-		private static readonly HttpClient client = new HttpClient();
-		public static async Task Send(string log, string backend) 
-		{
-			try
+        private static readonly HttpClient client = new HttpClient();
+        public static async Task Send(string log, string backend) 
+        {
+            try
             {
-				var message = new HttpRequestMessage(HttpMethod.Post, backend);
+                var message = new HttpRequestMessage(HttpMethod.Post, backend);
                 message.Content = new StringContent(log);
                 var resp = await client.SendAsync(message);
             }
@@ -19,6 +19,6 @@ namespace Neo.Plugins
             {
                 Console.WriteLine("[LogBackend] http exception: {0}", e.Message);
             }
-		}
+        }
     }
 }
