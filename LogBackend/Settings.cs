@@ -16,7 +16,7 @@ namespace Neo.Plugins
 		static Settings() 
 		{
 			Default = new Settings(Assembly.GetExecutingAssembly().GetConfiguration());
-        }
+		}
 		public Settings(IConfigurationSection section) 
 		{
 			this.CacheCount = GetValueOrDefault(section.GetSection("CacheCount"), 500, p => int.Parse(p));

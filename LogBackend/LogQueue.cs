@@ -19,8 +19,7 @@ namespace Neo.Plugins
 
         public void EnQueue(string log)
         {
-
-            while (this.length <= this.que.Count)
+			while (this.length <= this.que.Count)
             {
                 this.que.TryDequeue(out string str);
             }

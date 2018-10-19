@@ -7,7 +7,8 @@ namespace Neo.Plugins
 	internal class Backend
     {
 		private static readonly HttpClient client = new HttpClient();
-		public static async Task Send(string log, string backend) {
+		public static async Task Send(string log, string backend) 
+		{
 			try
             {
 				var message = new HttpRequestMessage(HttpMethod.Post, backend);
