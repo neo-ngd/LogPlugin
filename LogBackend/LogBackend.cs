@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 
 namespace Neo.Plugins
 {
-	public class Loger: Plugin, ILogPlugin
+	public class LogBackend: Plugin, ILogPlugin
     {
 		internal LogQueue logs;
 		internal string backend;
 		internal int cachecount;
 		internal bool running;
 		internal Thread sendThread;
-		public Loger() 
+		public LogBackend() 
 		{
 			this.cachecount = Settings.Default.CacheCount;
 			logs = new LogQueue(this.cachecount);
 			this.backend = Settings.Default.Backend;
 			this.running = true;
 			this.sendThread = new Thread(this.Send);
+			this.sendThread.IsBackground = true;
 			this.sendThread.Start();
 		}
 		void ILogPlugin.Log(string source, LogLevel level, string message) 
@@ -28,12 +28,17 @@ namespace Neo.Plugins
 		}
 		async void Send() 
 		{
-			while (running) {
+			while (this.running) {
 				bool re = this.logs.DeQueue(out string log);
 				if (re) {
 					await Backend.Send(log, this.backend);
 				}
 			}
+		}
+		~ LogBackend()
+		{
+			this.running = false;
+			this.sendThread.Join();
 		}
     }
 

@@ -5,12 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="LogBackend\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Neo" Version="2.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LogBackend\config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
 </Project>
