@@ -26,7 +26,8 @@ you can download release version directly at [releases](https://github.com/KickS
 5. start *neo-cli*
 now  you can get the consensus logs at your backend server.
 ## trouble shooting
-1. you cannt start please check [dotnet core 2.x requisite](https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x), specially libcurl3 for ubuntu and libcurl for centos.
+1. if you cannt start because of exception: **Unable to load DLL 'System.Net.Http.Native': The specified module or one of its dependencies could not be found**.
+please check [dotnet core 2.x requisite](https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x), specially libcurl3 for ubuntu and libcurl for centos.
 ## todo
 1. add a buffer in Backend, so wont connection every log.
 2. long term: consider long connection tcp or http.
