@@ -25,7 +25,8 @@ you can download release version directly at [releases](https://github.com/KickS
 4. copy LogBackend.dll and LogBackends/config.json into *Plugins* under *neo-cli*
 5. start *neo-cli*
 now  you can get the consensus logs at your backend server.
-
+## trouble shooting
+1. you cannt start please check [dotnet core 2.x requisite](https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x), specially libcurl3 for ubuntu and libcurl for centos.
 ## todo
 1. add a buffer in Backend, so wont connection every log.
 2. long term: consider long connection tcp or http.
