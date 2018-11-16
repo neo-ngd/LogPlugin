@@ -28,7 +28,7 @@ For example
     }
 }
 ```
-> __CacheCount__:this is how many logs can store in the queue. when more than CacheCount logs are not sent, oldest logs will be abandoned.
+> __CacheCount__:this is how many logs can store in the queue. when more than CacheCount logs are not sent, oldest logs will be abandoned.  
 > __Backend__: the log-server you establish to receive logs using http.
 ## usage
 4. copy LogBackend.dll and LogBackends/config.json into *Plugins* under *neo-cli*
