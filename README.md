@@ -24,7 +24,7 @@ For example
 {
   "PluginConfiguration": {
     "CacheCount": 256,
-    "Backend": "http://47.74.50.11:8090"
+    "Backend": "http://LogServer:port"
     }
 }
 ```
