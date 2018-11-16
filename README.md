@@ -9,8 +9,7 @@ This monitoring system is composed with 3 parts:
 [LogMonitor](https://github.com/neo-ngd/LogMonitor) is the website to view realtime logs.  
 
 ## prepation
-set up a backend server based on http protocol, follow this [LogServer](https://github.com/neo-ngd/LogServer)
-so you can get a url: http://LogServer:port
+set up a backend server based on http protocol, follow [LogServer](https://github.com/neo-ngd/LogServer) and [LogMonitor](https://github.com/neo-ngd/LogMonitor), so you can get a url: http://LogServer:port. (LogMonitor can be in the same server as LogServer)
 
 ### build
 1. clone this repository
