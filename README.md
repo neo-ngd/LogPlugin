@@ -1,7 +1,7 @@
 # LogBackendPlugin
 a plugin for neo to integrate with a log backend.
 ## prepation
-set up a backend server based on http protocol, follow this [log-backend](https://github.com/KickSeason/log-backend)
+set up a backend server based on http protocol, follow this [log-server](https://github.com/KickSeason/log-server)
 so you can get a url: http://backendsrv:port
 
 ### build
@@ -9,13 +9,13 @@ so you can get a url: http://backendsrv:port
 2. build using dotnet or visual studio
 3. you can got LogBackends.dll and LogBackends/config.json
 ### download
-you can download release version directly at [releases](https://github.com/KickSeason/neo-plugins/releases)
+you can download release version directly at [releases](https://github.com/KickSeason/LogBackend/releases)
 ## configuration
 ```
 {
   "PluginConfiguration": {
     "CacheCount": 256,
-    "Backend": "http://47.98.227.225:8080"
+    "Backend": "http://47.74.50.11:8090"
     }
 }
 ```
