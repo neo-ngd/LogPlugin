@@ -1,5 +1,11 @@
 # LogBackendPlugin
 a plugin for neo to integrate with a log backend.
+## system architecture
+![system](https://github.com/KickSeason/LogBackend/blob/master/log-monitor.png)
+
+[LogBackend](https://github.com/KickSeason/LogBackend) is for sending neo-cli's log to log-server.  
+[log-server](https://github.com/KickSeason/log-server) is for persisting logs into files and sending to partners  
+[log-monitor](https://github.com/KickSeason/log-monitor) is the website to view realtime logs
 ## prepation
 set up a backend server based on http protocol, follow this [log-server](https://github.com/KickSeason/log-server)
 so you can get a url: http://backendsrv:port
