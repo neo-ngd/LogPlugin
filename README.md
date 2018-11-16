@@ -1,21 +1,21 @@
-# LogBackendPlugin
-a plugin for neo to integrate with a log backend.
+# LogPlugin
+a plugin for neo to integrate with a LogServer.
 ## system architecture
 ![system](https://github.com/KickSeason/LogBackend/blob/master/log-monitor.png)
 
-[LogBackendPlugin](https://github.com/KickSeason/LogBackendPlugin) is for sending neo-cli's log to log-server.  
-[log-server](https://github.com/KickSeason/log-server) is for persisting logs into files and sending to partners  
+[LogPlugin](https://github.com/neo-ngd/LogPlugin.git) is for sending neo-cli's log to LogServer.  
+[LogServer](https://github.com/neo-ngd/LogServer) is for persisting logs into files and sending to partners  
 [log-monitor](https://github.com/KickSeason/log-monitor) is the website to view realtime logs
 ## prepation
-set up a backend server based on http protocol, follow this [log-server](https://github.com/KickSeason/log-server)
-so you can get a url: http://log-server:port
+set up a backend server based on http protocol, follow this [LogServer](https://github.com/neo-ngd/LogServer)
+so you can get a url: http://LogServer:port
 
 ### build
 1. clone this repository
 2. build using dotnet or visual studio
 3. you can got LogBackends.dll and LogBackends/config.json
 ### download
-you can download release version directly at [releases](https://github.com/KickSeason/LogBackend/releases)
+you can download release version directly at [releases](https://github.com/neo-ngd/LogPlugin/releases)
 ## configuration
 ```
 {
