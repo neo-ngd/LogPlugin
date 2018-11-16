@@ -1,11 +1,13 @@
+# Log system for consensus nodes
 # LogPlugin
-a plugin for neo to integrate with a LogServer.
+This project is a plugin for neo to integrate with a LogServer.
 ## system architecture
 ![system](https://github.com/KickSeason/LogBackend/blob/master/log-monitor.png)
 
+This system is composed with 3 parts:  
 [LogPlugin](https://github.com/neo-ngd/LogPlugin.git) is for sending neo-cli's log to LogServer.  
 [LogServer](https://github.com/neo-ngd/LogServer) is for persisting logs into files and sending to partners  
-[log-monitor](https://github.com/KickSeason/log-monitor) is the website to view realtime logs
+[LogMonitor](https://github.com/neo-ngd/LogMonitor) is the website to view realtime logs
 ## prepation
 set up a backend server based on http protocol, follow this [LogServer](https://github.com/neo-ngd/LogServer)
 so you can get a url: http://LogServer:port
