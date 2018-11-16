@@ -1,5 +1,5 @@
-# Log system for consensus nodes
-# LogPlugin
+# Logging System For Consensus Nodes
+## LogPlugin
 This project is a plugin for neo to integrate with a LogServer.
 ## system architecture
 ![system](https://github.com/KickSeason/LogBackend/blob/master/log-monitor.png)
