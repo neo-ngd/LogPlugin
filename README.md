@@ -3,10 +3,10 @@
 ## system architecture
 ![system](https://github.com/KickSeason/LogBackend/blob/master/log-monitor.png)
 
-This system is composed with 3 parts:  
+This logging system is composed with 3 parts:  
 [LogPlugin](https://github.com/neo-ngd/LogPlugin.git) is for sending neo-cli's log to LogServer.  
-[LogServer](https://github.com/neo-ngd/LogServer) is for persisting logs into files and sending to partners  
-[LogMonitor](https://github.com/neo-ngd/LogMonitor) is the website to view realtime logs
+[LogServer](https://github.com/neo-ngd/LogServer) is for persisting logs into files and sending to partners.  
+[LogMonitor](https://github.com/neo-ngd/LogMonitor) is the website to view realtime logs.  
 
 ## prepation
 set up a backend server based on http protocol, follow this [LogServer](https://github.com/neo-ngd/LogServer)
