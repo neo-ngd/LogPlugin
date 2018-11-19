@@ -15,8 +15,7 @@ set up a backend server based on http protocol, follow [LogServer](https://githu
 1. clone this repository
 2. build using dotnet or visual studio
 3. you can got LogBackends.dll and LogBackends/config.json
-### Download
-you can download release version directly at [releases](https://github.com/neo-ngd/LogPlugin/releases)
+
 ## Configuration
 For example
 ```
