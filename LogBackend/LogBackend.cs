@@ -26,12 +26,12 @@ namespace Neo.Plugins
 			string line = $"[{now:yyyy-MM-dd hh:mm:ss}]<{source}>: {message}";
 			this.logs.EnQueue(line);
 		}
-		async void Send() 
+		void Send() 
 		{
 			while (this.running) {
 				bool re = this.logs.DeQueue(out string log);
 				if (re) {
-					await Backend.Send(log, this.backend);
+					Backend.Send(log, this.backend);
 				}
 			}
 		}
