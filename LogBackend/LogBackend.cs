@@ -23,7 +23,7 @@ namespace Neo.Plugins
 		void ILogPlugin.Log(string source, LogLevel level, string message) 
 		{
 			DateTime now = DateTime.Now;
-			string line = $"[{now:yyyy-MM-dd hh:mm:ss}]<{source}>: {message}";
+			string line = $"[{now.TimeOfDay:yyyy-MM-dd hh:mm:ss}]<{source}>: {message}";
 			this.logs.EnQueue(line);
 		}
 		void Send() 
