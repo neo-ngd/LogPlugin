@@ -1,7 +1,7 @@
 # Monitoring System For Consensus Nodes  
 
 ## System Architecture
-![system](https://github.com/neo-ngd/LogPlugin/blob/master/log-monitor.png)
+![system](https://github.com/neo-ngd/LogPlugin/blob/dev/log-monitor.png)
 
 This monitoring system is composed with 3 parts:  
 [LogPlugin](https://github.com/neo-ngd/LogPlugin.git) is for sending neo-cli's log to LogServer.  
