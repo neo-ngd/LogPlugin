@@ -6,10 +6,9 @@
 This monitoring system is composed with 3 parts:  
 [LogPlugin](https://github.com/neo-ngd/LogPlugin.git) is for sending neo-cli's log to LogServer.  
 [LogServer](https://github.com/neo-ngd/LogServer) is for persisting logs into files and sending to partners.  
-[LogMonitor](https://github.com/neo-ngd/LogMonitor) is the website to view realtime logs.  
 
 ## Prepation
-set up a backend server based on http protocol, follow [LogServer](https://github.com/neo-ngd/LogServer) and [LogMonitor](https://github.com/neo-ngd/LogMonitor), so you can get a url: http://LogServer:port. (LogMonitor can be in the same server as LogServer)
+set up a backend server based on http protocol, follow [LogServer](https://github.com/neo-ngd/LogServer) , so you can get a url: http://LogServer:port/log. 
 
 ### Build
 1. clone this repository
@@ -23,12 +22,12 @@ For example
 {
   "PluginConfiguration": {
     "CacheCount": 256,
-    "Backend": "http://LogServer:port"
+    "Backend": "http://LogServer:port/log"
     }
 }
 ```
 > __CacheCount__:this is how many logs can store in the queue. when more than CacheCount logs are not sent, oldest logs will be abandoned.  
-> __Backend__: the log-server you establish to receive logs using http.
+> __Backend__: the LogServer you establish to receive logs using http.
 ## Usage
 4. copy LogBackend.dll and LogBackends/config.json into *Plugins* under *neo-cli*
 5. start *neo-cli*
