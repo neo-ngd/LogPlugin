@@ -1,6 +1,6 @@
 ﻿{
   "PluginConfiguration": {
     "CacheCount": 256,
-    "Backend": "http://47.98.227.225:8080"
+        "Backend": "http://47.98.227.225:8080/log"
     }
 }
