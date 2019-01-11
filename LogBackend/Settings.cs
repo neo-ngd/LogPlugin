@@ -11,12 +11,8 @@ namespace Neo.Plugins
 		public int CacheCount { get; }
 		public string Backend { get; }
 
-		public static Settings Default { get; }
+		public static Settings Default { get; private set }
 
-		static Settings() 
-		{
-			Default = new Settings(Assembly.GetExecutingAssembly().GetConfiguration());
-		}
 		public Settings(IConfigurationSection section) 
 		{
 			this.CacheCount = GetValueOrDefault(section.GetSection("CacheCount"), 500, p => int.Parse(p));
@@ -28,5 +24,9 @@ namespace Neo.Plugins
 			if (section.Value == null) return defaultValue;
 			return selector(section.Value);
 		}
+        public static void Load(IConfigurationSection section)
+        {
+            Default = new Settings(section);
+        }
     }
 }
