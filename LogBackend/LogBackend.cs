@@ -20,7 +20,11 @@ namespace Neo.Plugins
 			this.sendThread.IsBackground = true;
 			this.sendThread.Start();
 		}
-		void ILogPlugin.Log(string source, LogLevel level, string message) 
+        public override void Configure()
+        {
+            Settings.Load(GetConfiguration());
+        }
+        void ILogPlugin.Log(string source, LogLevel level, string message) 
 		{
 			DateTime now = DateTime.Now;
 			string line = $"[{now:yyyy-MM-dd HH:mm:ss}]<{source}>: {message}";
