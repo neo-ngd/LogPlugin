@@ -7,6 +7,7 @@
   <ItemGroup>
     <Folder Include="LogBackend\" />
   </ItemGroup>
+
   <ItemGroup>
     <None Update="LogBackend\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
