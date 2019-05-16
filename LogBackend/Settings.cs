@@ -11,7 +11,7 @@ namespace Neo.Plugins
 		public int CacheCount { get; }
 		public string Backend { get; }
 
-		public static Settings Default { get; private set }
+		public static Settings Default { get; private set; }
 
 		public Settings(IConfigurationSection section) 
 		{
