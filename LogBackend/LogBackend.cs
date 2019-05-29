@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using System.IO;
+using System.Reflection;
 
 namespace Neo.Plugins
 {
@@ -9,6 +11,7 @@ namespace Neo.Plugins
 		internal string backend;
 		internal int cachecount;
 		internal bool running;
+		internal bool sendConfiguration;
 		internal Thread sendThread;
 		public LogBackend() 
 		{
@@ -16,6 +19,7 @@ namespace Neo.Plugins
 			logs = new LogQueue(this.cachecount);
 			this.backend = Settings.Default.Backend;
 			this.running = true;
+			this.sendConfiguration = true;
 			this.sendThread = new Thread(this.Send);
 			this.sendThread.IsBackground = true;
 			this.sendThread.Start();
@@ -24,6 +28,26 @@ namespace Neo.Plugins
         {
             Settings.Load(GetConfiguration());
         }
+		public void sendAllConfiguration()
+		{
+			//protocol.json
+			var protocolSetting = File.ReadAllText("protocol.json");
+			string line = $"Protocol configuration: {protocolSetting}";
+			this.logs.EnQueue(line);
+			//plugin configuration
+			foreach (var p in Neo.Plugins.Plugin.Plugins) {
+				var configFile = p.ConfigFile;
+				var configSetting = File.ReadAllText(configFile);
+				line = $"Plugin configuration, name: {p.Name}, config: {configSetting}";
+				this.logs.EnQueue(line);
+			}
+			//node version
+			var executing =  Assembly.GetExecutingAssembly().GetName();
+			var calling = Assembly.GetAssembly(typeof(Plugin)).GetName();
+			var entry = Assembly.GetEntryAssembly().GetName();
+			line = $"node version, {entry.Name}: {entry.Version}, {calling.Name}: {calling.Version}, {executing.Name}: {executing.Version}";
+			this.logs.EnQueue(line);
+		}
         void ILogPlugin.Log(string source, LogLevel level, string message) 
 		{
 			DateTime now = DateTime.Now;
@@ -36,6 +60,10 @@ namespace Neo.Plugins
 				bool re = this.logs.DeQueue(out string log);
 				if (re) {
 					Backend.Send(log, this.backend);
+					if (this.sendConfiguration) {
+						sendAllConfiguration();
+						this.sendConfiguration = false;
+					}
 				}
 			}
 		}
