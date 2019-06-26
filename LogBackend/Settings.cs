@@ -8,6 +8,7 @@ namespace Neo.Plugins
 {
 	internal class Settings
     {
+		public string Name {get;}
 		public int CacheCount { get; }
 		public string Backend { get; }
 
@@ -15,6 +16,7 @@ namespace Neo.Plugins
 
 		public Settings(IConfigurationSection section) 
 		{
+			this.Name = section.GetSection("Name").Value;
 			this.CacheCount = GetValueOrDefault(section.GetSection("CacheCount"), 500, p => int.Parse(p));
 			this.Backend = section.GetSection("Backend").Value;
 		}

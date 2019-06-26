@@ -7,6 +7,9 @@ namespace Neo.Plugins
 	internal static class Backend
     {
         private static readonly HttpClient client = new HttpClient();
+        public static void SetFrom(string name) {
+            client.DefaultRequestHeaders.Add("From", name);
+        }
         public static void Send(string log, string backend) 
         {
             try

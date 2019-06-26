@@ -23,6 +23,7 @@ namespace Neo.Plugins
 			this.sendThread = new Thread(this.Send);
 			this.sendThread.IsBackground = true;
 			this.sendThread.Start();
+			Backend.SetFrom(Settings.Default.Name);
 		}
         public override void Configure()
         {
