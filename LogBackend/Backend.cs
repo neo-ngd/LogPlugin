@@ -7,8 +7,9 @@ namespace Neo.Plugins
 	internal static class Backend
     {
         private static readonly HttpClient client = new HttpClient();
-        public static void SetFrom(string name) {
-            client.DefaultRequestHeaders.Add("From", name);
+        private static string name;
+        public static void SetFrom(string n) {
+            name = n.Contains("@") ? n : n+"@neo";
         }
         public static void Send(string log, string backend) 
         {
@@ -16,6 +17,7 @@ namespace Neo.Plugins
             {
                 var message = new HttpRequestMessage(HttpMethod.Post, backend);
                 message.Content = new StringContent(log);
+                message.Headers.From = name;
                 var task = client.SendAsync(message);
 				var rep = task.Result;
             }

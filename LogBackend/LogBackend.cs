@@ -22,8 +22,8 @@ namespace Neo.Plugins
 			this.sendConfiguration = true;
 			this.sendThread = new Thread(this.Send);
 			this.sendThread.IsBackground = true;
-			this.sendThread.Start();
 			Backend.SetFrom(Settings.Default.Name);
+			this.sendThread.Start();
 		}
         public override void Configure()
         {
@@ -51,9 +51,11 @@ namespace Neo.Plugins
 		}
         void ILogPlugin.Log(string source, LogLevel level, string message) 
 		{
-			DateTime now = DateTime.Now;
-			string line = $"[{now:yyyy-MM-dd HH:mm:ss}]<{source}>: {message}";
-			this.logs.EnQueue(line);
+			if (source == nameof(ConsensusService)) {
+				DateTime now = DateTime.Now;
+				string line = $"[{now:yyyy-MM-dd HH:mm:ss}]<{source}>: {message}";
+				this.logs.EnQueue(line);
+			}
 		}
 		void Send() 
 		{
