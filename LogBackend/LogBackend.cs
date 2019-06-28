@@ -51,7 +51,7 @@ namespace Neo.Plugins
 		}
         void ILogPlugin.Log(string source, LogLevel level, string message) 
 		{
-			if (source == nameof(ConsensusService)) {
+			if (source == "ConsensusService") {
 				DateTime now = DateTime.Now;
 				string line = $"[{now:yyyy-MM-dd HH:mm:ss}]<{source}>: {message}";
 				this.logs.EnQueue(line);
