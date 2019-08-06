@@ -24,7 +24,6 @@ namespace Neo.Plugins
             this.sendThread.IsBackground = true;
             Sender.SetFrom(Settings.Default.Name);
             this.sendThread.Start();
-            Console.WriteLine("LogPlugin start.");
         }	
         public override void Configure()
         {
