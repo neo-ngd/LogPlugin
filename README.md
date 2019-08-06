@@ -26,7 +26,7 @@ For example
     }
 }
 ```
-> __CName__:this is the name of your node.  
+> __Name__:this is the name of your node.  
 > __Backend__: the LogServer you establish to receive logs using http.
 ## Usage
 4. copy LogPlugin.dll and LogPlugin/config.json into `Plugins` under `neo-cli`
