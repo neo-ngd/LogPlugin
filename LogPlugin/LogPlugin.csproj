@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="LogBackend\" />
+    <Folder Include="LogPlugin\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Neo" Version="2.10.2" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="LogBackend\config.json">
+    <None Update="LogPlugin\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
