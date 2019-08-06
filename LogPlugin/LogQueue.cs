@@ -16,7 +16,6 @@ namespace Neo.Plugins
             this.que = new ConcurrentQueue<string>();
             this.length = 512;
         }
-
         public void EnQueue(string log)
         {
             while (this.length <= this.que.Count)
